@@ -60,12 +60,6 @@ export const Header = ({ onHandleTransactions, onDeleteTransactions }) => {
           </div>
           <div className="flex justify-between align-middle">
             <h1 className="text-3xl font-light mb-3">Expense Tracker</h1>
-            <button
-              onClick={() => onDeleteTransactions()}
-              className="w-1/4 text-white bg-white bg-opacity-20 rounded-full border-2 border-transparent focus:border-white focus:border-opacity-0 focus:outline-none px-3 py-1 leading-none text-sm transition-colors placeholder-white placeholder-opacity-30"
-            >
-              Clear Transactions
-            </button>
             <input
               type="date"
               id="start"

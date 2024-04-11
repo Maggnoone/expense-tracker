@@ -1,25 +1,26 @@
 import React from 'react'
 
-export const Stats = ({transactions}) => {
-  
-  const expenses = transactions.filter((el) => el.type !== "Income")
-  const incomes = transactions.filter((el) => el.type !== "Expense")
-  
+export const Stats = ({ transactions, onDeleteTransactions }) => {
+  const expenses = transactions.filter((el) => el.type !== "Income");
+  const incomes = transactions.filter((el) => el.type !== "Expense");
+
   const sumProperties = (array, propertyName = "balance") => {
     let total = 0;
-  
+
     for (let obj of array) {
-      if (obj.hasOwnProperty(propertyName) && typeof obj[propertyName] === "number") {
+      if (
+        obj.hasOwnProperty(propertyName) &&
+        typeof obj[propertyName] === "number"
+      ) {
         total += obj[propertyName];
       }
     }
-  
+
     return total;
   };
 
-
   return (
-    <div className="px-5 bg-white py-7">
+    <div className="px-5 bg-white pt-2 pb-2">
       <div className="flex">
         <div className="flex-1 group">
           <a
@@ -63,7 +64,13 @@ export const Stats = ({transactions}) => {
             </span>
           </a>
         </div>
+        <button
+          onClick={() => onDeleteTransactions()}
+          className="w-1/4 text-[#40D79E] bg-white hover:bg-[#40D79E] bg-opacity-20 rounded-full border-2 border-[#40D79E] hover:border-transparent hover:text-white focus:border-white focus:border-opacity-0 focus:outline-none px-3 py-1 leading-none text-sm transition-colors placeholder-white placeholder-opacity-30"
+        >
+          Clear Transactions
+        </button>
       </div>
     </div>
   );
-}
+};

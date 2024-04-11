@@ -34,15 +34,23 @@ export const App = () => {
     setTransactions(() => [...transactions, transaction]);
   };
 
+  const handleDeleteTransactions = () => {
+    console.log("Working!");
+    setTransactions([]);
+  };
+
   return (
     <>
       <div className="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center px-3 py-5">
         <div className="w-full bg-white text-gray-800 overflow-hidden border-4 border-white rounded-4xl shadow-lg relative max-w-[814px]">
-          <Header onHandleTransactions={onHandleTransactions} />
+          <Header
+            onHandleTransactions={onHandleTransactions}
+            onDeleteTransactions={handleDeleteTransactions}
+          />
 
-          <ListTransactions transactions={transactions}/>
+          <ListTransactions transactions={transactions} />
 
-          <Stats transactions={transactions}/>
+          <Stats transactions={transactions} />
         </div>
       </div>
     </>

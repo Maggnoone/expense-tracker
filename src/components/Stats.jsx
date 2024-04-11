@@ -19,7 +19,7 @@ export const Stats = ({transactions}) => {
 
 
   return (
-    <div className="px-5 bg-white pb-2">
+    <div className="px-5 bg-white py-7">
       <div className="flex">
         <div className="flex-1 group">
           <a

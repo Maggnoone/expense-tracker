@@ -48,7 +48,7 @@ export const Stats = ({transactions}) => {
         <div className="flex-1 group">
           <a
             href="#"
-            id="expenses-border"
+            id="total-border"
             className="flex items-end justify-center text-center mx-auto px-4 w-3/5 text-gray-600 border-b-2 border-transparent"
           >
             <span className="block px-1">
